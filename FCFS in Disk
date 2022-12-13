@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int n;
+	printf("enter the length of string:\n");
+	scanf("%d",&n);
+	printf("enter the string of length %d :\n",n);
+        int str[n],i;        
+        for(i=0;i<n;i++)
+        {
+          scanf("%d",&str[i]);
+        }
+        
+       int tracks=0;
+       int pos;
+       printf("enter the initial position=\n");
+       scanf("%d",&pos);
+       for(i=0;i<n;i++)
+       {
+        tracks=tracks+abs(pos-str[i]);
+        pos=str[i];
+       }
+       
+       printf("Total number of tracks accessed=%d\n",tracks);
+       return 0;
+}
