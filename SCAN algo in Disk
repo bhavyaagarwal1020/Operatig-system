@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+#include <limits.h>
+
+int main()
+{
+	int n;
+	printf("enter the length of string:\n");
+	scanf("%d",&n);
+	printf("enter the string of length %d :\n",n);
+        int str[n],i;        
+        for(i=0;i<n;i++)
+        {
+          scanf("%d",&str[i]);
+        }
+        while(1)
+        {
+		
+        int min=INT_MAX;
+        int max=INT_MIN;
+       int tracks=0;
+       int pos,dir;
+       printf("enter the initial position=\n");
+       scanf("%d",&pos);
+       printf("enter the direction: \n");
+       printf(" 0: indicates right to left\n");
+       printf(" 1: indicates left to right\n");
+       scanf("%d",&dir);
+       for(i =0;i<n;i++)
+	   {
+	   	if(str[i]>max)
+	   	{
+	      max=str[i];		
+	    }
+	   	if(str[i]<min)
+	   	{
+	   	  min=str[i];
+		}
+	   }          
+	    
+       if(dir==1)         
+       {
+       	tracks=tracks+(199-pos)+(199-min);
+	   }
+       else if(dir==0)
+       {
+       	tracks=tracks+pos+max;
+	   }
+	   else
+	   {
+	   	printf("INVALID DIRECION CHOSEN\n");
+	   }
+	   printf("total tracks accesesd=%d\n",tracks);
+}
+     return 0;
+ }
